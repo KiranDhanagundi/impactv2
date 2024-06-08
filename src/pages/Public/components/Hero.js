@@ -5,7 +5,7 @@ import {
   Stack,
   Image,
   Box,
-  useBreakpointValue
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import React from "react";
 import { Link } from "react-router-dom";
@@ -56,7 +56,7 @@ const Hero = () => {
         >
           {"Market Place | IAM Security"}
         </Heading>
-        
+
         <Link to={"/app/signin"}>
           <Button
             fontWeight="normal"
@@ -64,18 +64,15 @@ const Hero = () => {
             color={"white"}
             borderRadius="md"
             size="md"
-            mb='20px'
+            mb="20px"
+            align={["center", "center", "left", "left"]}
           >
             Sign In
           </Button>
         </Link>
       </Stack>
       <Box w={imageHeight} align="right" mr="0px">
-        <Image
-          h={imageHeight}
-          borderRadius="full"
-          src={globe}
-        />
+        <Image h={imageHeight} borderRadius="full" src={globe} />
       </Box>
     </Flex>
   );
