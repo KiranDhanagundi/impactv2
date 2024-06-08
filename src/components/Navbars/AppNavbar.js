@@ -76,7 +76,7 @@ const AppNavbar = () => {
         as="nav"
         shadow="md"
         align="center"
-        maxW={{ xl: "1500px" }}
+        maxW={{ xl: "1300px" }}
         mx="auto"
         justify="space-between"
         lineHeight="12px"

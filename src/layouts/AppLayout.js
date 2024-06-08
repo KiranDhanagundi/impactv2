@@ -59,7 +59,7 @@ export default function AppLayout(props) {
             {...rest}
           />
         </Portal>
-        <PanelContent p="10px" maxW={{ xl: "1500px" }}>
+        <PanelContent p="10px" maxW={{ xl: "1300px" }}>
           <PanelContainer>
             <Routes>
               {getRoutes(routes)}
