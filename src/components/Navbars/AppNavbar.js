@@ -39,7 +39,7 @@ import { HamburgerIcon, SmallCloseIcon } from "@chakra-ui/icons";
 const AppNavbar = () => {
   const [show, setShow] = React.useState(false);
   const toggleMenu = () => setShow(!show);
-  const user ='test'
+  const user = "test";
 
   const customScrollbar = css`
     ::-webkit-scrollbar {
@@ -126,142 +126,93 @@ const AppNavbar = () => {
           <Link to="/app/cart">
             <IconButton bg="none" aria-label="Cart" icon={<FaCartPlus />} />
           </Link>
-          {user ? (
-            <MenuItem to="/app/signin">
-              <Button
-                fontWeight="normal"
-                size="sm"
-                borderRadius="md"
-                color="white"
-                bg="#0648b3"
-              >
-                Sign In
-              </Button>
-            </MenuItem>
-          ) : (
-            <Menu>
-              <MenuButton
-                as={Button}
-                rounded="full"
-                variant="button"
-                cursor="pointer"
-              >
-                <Flex color="white" align="center">
-                  <Avatar
-                    size="sm"
-                    name={'Impact'}
-                    src={user?.profileImage}
+          <Menu>
+            <MenuButton
+              as={Button}
+              rounded="full"
+              variant="button"
+              cursor="pointer"
+            >
+              <Flex color="white" align="center">
+                <Avatar
+                  size="sm"
+                  name={"Impact Dev"}
+                  src={user?.profileImage}
+                />
+                <Box color="gray.700" ml={2}>
+                  {"Impact"}
+                </Box>
+              </Flex>
+            </MenuButton>
+            <MenuList
+              p="0px"
+              maxHeight="400px"
+              overflowY="auto"
+              css={customScrollbar}
+            >
+              <MenuItem _hover={{ bg: "gray.100" }}>
+                <Link to="/app/profile">
+                  <IconButton
+                    bg="none"
+                    aria-label="Profile"
+                    icon={<FiUser />}
                   />
-                  <Box color="gray.700" ml={2}>
-                    {'Impact'}
-                  </Box>
-                </Flex>
-              </MenuButton>
-              <MenuList
-                p="0px"
-                maxHeight="400px"
-                overflowY="auto"
-                css={customScrollbar}
-              >
-                <MenuItem _hover={{ bg: "gray.100" }}>
-                  <Link to="/app/profile">
-                    <IconButton
-                      bg="none"
-                      aria-label="Profile"
-                      icon={<FiUser />}
-                    />
-                    Profile
-                  </Link>
-                </MenuItem>
-                <MenuItem _hover={{ bg: "gray.100" }}>
-                  <Link to="/app/products">
-                    <IconButton
-                      bg="none"
-                      aria-label=" My Products"
-                      icon={<FaStore />}
-                    />
-                    My Products
-                  </Link>
-                </MenuItem>
-                <MenuItem _hover={{ bg: "gray.100" }}>
-                  <Link to="/app/blogs">
-                    <IconButton
-                      bg="none"
-                      aria-label="Blogs"
-                      icon={<FaBlog />}
-                    />
-                    My Blogs
-                  </Link>
-                </MenuItem>
-                <MenuItem _hover={{ bg: "gray.100" }}>
-                  <Link to="/app/dashboard">
-                    <IconButton
-                      bg="none"
-                      aria-label="Dashboard"
-                      icon={<MdOutlineDashboard />}
-                    />
-                    Dashboard
-                  </Link>
-                </MenuItem>
-                <MenuItem _hover={{ bg: "gray.100" }}>
-                  <Link to="/app/cart">
-                    <IconButton
-                      bg="none"
-                      aria-label="Cart"
-                      icon={<FaCartPlus />}
-                    />
-                    Cart
-                  </Link>
-                </MenuItem>
-                <Divider />
-                <MenuItem _hover={{ bg: "gray.100" }}>
-                  <Link to="/app/subscriptions">
-                    <IconButton
-                      bg="none"
-                      aria-label="Subscription"
-                      icon={<MdOutlineSubscriptions />}
-                    />
-                    Subscription
-                  </Link>
-                </MenuItem>
-                <MenuItem _hover={{ bg: "gray.100" }}>
-                  <Link to="/app/settings">
-                    <IconButton
-                      bg="none"
-                      aria-label="Settings"
-                      icon={<FiSettings />}
-                    />
-                    Settings
-                  </Link>
-                </MenuItem>
-                <Divider />
-                <MenuItem _hover={{ bg: "gray.100" }}>
-                  <Link to="/app/orders">
-                    <IconButton
-                      bg="none"
-                      aria-label="Orders"
-                      icon={<FaRegListAlt />}
-                    />
-                    Orders
-                  </Link>
-                </MenuItem>
-                <MenuItem _hover={{ bg: "gray.100" }}>
-                  <Link to="/app/users">
-                    <IconButton bg="none" aria-label="User" icon={<FaList />} />
-                    Users
-                  </Link>
-                </MenuItem>
-                <MenuItem _hover={{ bg: "gray.100" }}>
-                  <Link to="/app/payments">
-                    <IconButton
-                      bg="none"
-                      aria-label="Payments"
-                      icon={<MdOutlinePayment />}
-                    />
-                    Payments
-                  </Link>
-                </MenuItem>
-                <MenuItem _hover={{ bg: "gray.100" }}>
+                  Profile
+                </Link>
+              </MenuItem>
+              <MenuItem _hover={{ bg: "gray.100" }}>
+                <Link to="/app/products">
+                  <IconButton
+                    bg="none"
+                    aria-label=" My Products"
+                    icon={<FaStore />}
+                  />
+                  My Products
+                </Link>
+              </MenuItem>
+
+              <MenuItem _hover={{ bg: "gray.100" }}>
+                <Link to="/app/dashboard">
+                  <IconButton
+                    bg="none"
+                    aria-label="Dashboard"
+                    icon={<MdOutlineDashboard />}
+                  />
+                  Dashboard
+                </Link>
+              </MenuItem>
+              <MenuItem _hover={{ bg: "gray.100" }}>
+                <Link to="/app/cart">
+                  <IconButton
+                    bg="none"
+                    aria-label="Cart"
+                    icon={<FaCartPlus />}
+                  />
+                  Cart
+                </Link>
+              </MenuItem>
+              <Divider />
+              <MenuItem _hover={{ bg: "gray.100" }}>
+                <Link to="/app/subscriptions">
+                  <IconButton
+                    bg="none"
+                    aria-label="Subscription"
+                    icon={<MdOutlineSubscriptions />}
+                  />
+                  Subscription
+                </Link>
+              </MenuItem>
+
+              <Divider />
+
+              <MenuItem _hover={{ bg: "gray.100" }}>
+                <Link to="/app/users">
+                  <IconButton bg="none" aria-label="User" icon={<FaList />} />
+                  Users
+                </Link>
+              </MenuItem>
+
+              {/* <MenuItem _hover={{ bg: "gray.100" }}>
                   <Link to="/app/access">
                     <IconButton
                       bg="none"
@@ -270,21 +221,20 @@ const AppNavbar = () => {
                     />
                     Access Management
                   </Link>
-                </MenuItem>
-                <Divider />
-                <MenuItem _hover={{ bg: "gray.100" }}>
-                  <Link to="/home" onClick={handleLogout}>
-                    <IconButton
-                      bg="none"
-                      aria-label="Logout"
-                      icon={<FiLogOut />}
-                    />
-                    Logout
-                  </Link>
-                </MenuItem>
-              </MenuList>
-            </Menu>
-          )}
+                </MenuItem> */}
+              <Divider />
+              <MenuItem _hover={{ bg: "gray.100" }}>
+                <Link to="/home" onClick={handleLogout}>
+                  <IconButton
+                    bg="none"
+                    aria-label="Logout"
+                    icon={<FiLogOut />}
+                  />
+                  Logout
+                </Link>
+              </MenuItem>
+            </MenuList>
+          </Menu>
         </Flex>
       </Flex>
     </Box>

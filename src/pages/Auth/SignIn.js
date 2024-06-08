@@ -35,31 +35,18 @@ const navigate = useNavigate();
   const textColor = useColorModeValue("gray.700", "#0648b3");
   const bgColor = useColorModeValue("white", "gray.700");
 
-  const handleSubmit = async (event) => {
-    event.preventDefault(); // Prevent default form submission behavior
-
-    // Simple validation
-    if (!email || !password) {
+   const handleSubmit = () => {
+    // Check if email and password match
+    if (email === 'welcome@impact.com' && password === 'Welcome@1100') {
+      // Navigate to home page
+      navigate("/app/home");
+    } else {
+      // Show error toast
       toast({
         title: "Error",
-        description: "Please enter both email and password.",
+        description: "Please enter valid email and password.",
         status: "error",
-        duration: 1000,
-        isClosable: true,
-      });
-      return; // Stop the function if validation fails
-    }
-
-    try {
-      // Dispatch the signin request action
-      // dispatch(actions.signinRequest(email, password));
-    } catch (error) {
-      console.error("There was an error!", error);
-      toast({
-        title: "Error",
-        description: "Please enter valid Email Id and Password.",
-        status: "error",
-        duration: 2000,
+        duration: 3000,
         isClosable: true,
       });
     }
@@ -69,14 +56,6 @@ const navigate = useNavigate();
   const handleForgotPassword = () => {
     // setShowResetModal(true); // Show the reset password modal when "Forgot Password?" is clicked
   };
-
-  // Listen for changes in the Redux state
-  useEffect(() => {
-    // Check if the signin status has changed to success
-    if (email =='welcome@impcat.com' && password=='Welcome@1100') {
-      navigate("/app/home");
-    }
-  }, []); // Only re-run this effect when the status changes
 
   // const googleSignIn = () => {
   //   dispatch(actions.googleSignInRequest());
