@@ -20,7 +20,7 @@ import UserProfile from "./pages/App/Profile/components/UserProfile";
 // import Setting from "./pages/App/Settings/components/Setting";
 import User from "./pages/App/Users/components/User";
 // import Payments from "./pages/App/Payments/index.js";
-// import Notification from "./pages/App/Notifications/components/Notification";
+import Notification from "./pages/App/Notifications/components/Notification";
 import Subscription from "./pages/App/Subscriptions/components/Subscription";
 // import AccessManagement from "./pages/App/AccessManagement/index";
 import AddProduct from "./pages/App/Products/components/AddProduct.js";
@@ -106,14 +106,14 @@ var appRoutes = [
   //   component: Payments,
   //   layout: "/app",
   // },
-  // {
-  //   id: "app8",
-  //   path: "/notifications",
-  //   name: "Notification",
-  //   icon: <FiBell />,
-  //   component: Notification,
-  //   layout: "/app",
-  // },
+  {
+    id: "app8",
+    path: "/notifications",
+    name: "Notification",
+    icon: <FiBell />,
+    component: Notification,
+    layout: "/app",
+  },
   {
     id: "app9",
     path: "/subscriptions",
