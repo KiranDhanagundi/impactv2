@@ -4,9 +4,6 @@ import { Link } from "react-router-dom";
 import { FaArrowRight, FaShoppingCart } from "react-icons/fa";
 
 const Cart = () => {
-  // Access cart items from the Redux store
-  const cartItem = "";
-
   return (
     <Flex w="100%" minH="90vH" overflow="auto" direction="column">
       <Box align="start" mb="10px">

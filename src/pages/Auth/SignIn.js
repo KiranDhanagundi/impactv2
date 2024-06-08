@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   Flex,
   Button,
@@ -14,7 +14,7 @@ import {
   InputRightElement,
   useToast,
 } from "@chakra-ui/react";
-import { Link as ReactRouterLink, useNavigate  } from "react-router-dom";
+import { Link as ReactRouterLink, useNavigate } from "react-router-dom";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import {
   GoogleIcon,
@@ -23,21 +23,19 @@ import {
   StripeIcon,
 } from "../../components/Icons/Icons";
 
-
 function SignIn() {
-const navigate = useNavigate();
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-    const toggleShowPassword = () => setShowPassword(!showPassword);
-  const [showResetModal, setShowResetModal] = useState(false); // State for showing the reset password modal
+  const toggleShowPassword = () => setShowPassword(!showPassword);
   const toast = useToast();
   const textColor = useColorModeValue("gray.700", "#0648b3");
   const bgColor = useColorModeValue("white", "gray.700");
 
-   const handleSubmit = () => {
+  const handleSubmit = () => {
     // Check if email and password match
-    if (email === 'welcome@impact.com' && password === 'Welcome@1100') {
+    if (email === "welcome@impact.com" && password === "Welcome@1100") {
       // Navigate to home page
       navigate("/app/home");
     } else {
@@ -52,26 +50,7 @@ const navigate = useNavigate();
     }
   };
 
-  // Function to handle opening the reset password modal
-  const handleForgotPassword = () => {
-    // setShowResetModal(true); // Show the reset password modal when "Forgot Password?" is clicked
-  };
-
-  // const googleSignIn = () => {
-  //   dispatch(actions.googleSignInRequest());
-  // };
-
-  // const githubSignIn = () => {
-  //   dispatch(actions.githubSignInRequest());
-  // };
-
-  // const stripeSignIn = () => {
-  //   dispatch(actions.stripeSignInRequest());
-  // };
-
-  // const appleSignIn = () => {
-  //   dispatch(actions.appleSignInRequest());
-  // };
+  const handleForgotPassword = () => {};
 
   return (
     <Flex
@@ -90,7 +69,6 @@ const navigate = useNavigate();
         justifyContent="center"
         align="center"
         mt="20px"
-        
       >
         <Text fontSize="3xl" color="#0648b3" fontWeight="bold">
           Welcome Back!
@@ -106,7 +84,7 @@ const navigate = useNavigate();
           mx={{ base: "100px" }}
           bg={bgColor}
           boxShadow="md"
-          borderWidth='1px'
+          borderWidth="1px"
         >
           <Text
             fontSize="xl"

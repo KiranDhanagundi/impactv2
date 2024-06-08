@@ -8,7 +8,6 @@ import {
   VStack,
   HStack,
   Image,
-  useToast,
   Flex,
   Grid,
   Box,
@@ -28,9 +27,8 @@ import { DownloadIcon } from "@chakra-ui/icons";
 const EditProductModal = () => {
   const defaultImageSrc = "https://via.placeholder.com/150";
   const [isLoading] = useState(false);
-  const [productData, setProductData] = useState(null);
+  const [setProductData] = useState(null);
   const [editedProduct, setEditedProduct] = useState(null);
-  const toast = useToast();
 
   let { productId } = useParams();
 
@@ -38,8 +36,8 @@ const EditProductModal = () => {
     const fetchProductData = async () => {
       try {
         // const response = await axios.get(`/api/products/${productId}`);
-        setProductData('');
-        setEditedProduct('');
+        setProductData("");
+        setEditedProduct("");
       } catch (error) {
         console.error("Error fetching product data:", error);
       }

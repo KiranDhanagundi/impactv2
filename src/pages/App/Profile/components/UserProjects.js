@@ -10,18 +10,11 @@ import {
   HStack,
 } from "@chakra-ui/react";
 import { Link as ReactRouterLink } from "react-router-dom";
-import {FaStar } from "react-icons/fa";
+import { FaStar } from "react-icons/fa";
 import DeleteProduct from "../../Products/components/DeleteProduct";
 
 const UserProjects = ({ product }) => {
-  const {
-    description,
-    images,
-    name,
-    prices,
-    rating = 4.5,
-    numPurchases = 100,
-  } = product;
+  const { images, name, prices, rating = 4.5, numPurchases = 100 } = product;
 
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
 
@@ -106,12 +99,7 @@ const UserProjects = ({ product }) => {
           </Flex>
         </Flex>
       </Link>
-      <Flex
-        direction="row"
-        justify="space-between"
-        p="1"
-        borderTopWidth="1px"
-      >
+      <Flex direction="row" justify="space-between" p="1" borderTopWidth="1px">
         <Link
           as={ReactRouterLink}
           to={`/app/productedit/${product.id}`}
@@ -123,7 +111,6 @@ const UserProjects = ({ product }) => {
             variant={"outline"}
             fontSize={{ base: "sm", md: "md" }}
             h={{ base: "30px", md: "35px" }}
-           
           >
             Edit
           </Button>

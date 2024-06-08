@@ -35,12 +35,6 @@ const CartOrderSummary = ({ cartItems }) => {
     };
   });
 
-  const handleCheckout = () => {
-    const searchParams = new URLSearchParams(location.search);
-    searchParams.set("cartItems", JSON.stringify(cartItems));
-    history.push(`/app/checkout`);
-  };
-
   return cartItem.length !== 0 ? (
     <Box
       w="100%"

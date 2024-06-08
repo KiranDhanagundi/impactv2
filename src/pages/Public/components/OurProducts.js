@@ -1,37 +1,61 @@
-import React from 'react';
-import { Box, Image, Button, SimpleGrid, useColorModeValue, Heading, Flex, Center, Divider } from '@chakra-ui/react';
-import securityprovider from '../../../assets/img/securityprovider.png';
-import marketplace from '../../../assets/img/marketplace.png';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import {
+  Box,
+  Image,
+  Button,
+  SimpleGrid,
+  Heading,
+  Flex,
+  Center,
+  Divider,
+} from "@chakra-ui/react";
+import securityprovider from "../../../assets/img/securityprovider.png";
+import marketplace from "../../../assets/img/marketplace.png";
+import { useNavigate } from "react-router-dom";
 const OurProduct = () => {
-const navigate = useNavigate();
-    const handleExploreClick = (product) => {
-      if (product.id === 1) {
-           navigate('/app/home');
-      } else {
-         navigate('/app/iam/home');
-        }
+  const navigate = useNavigate();
+  const handleExploreClick = (product) => {
+    if (product.id === 1) {
+      navigate("/app/home");
+    } else {
+      navigate("/app/iam/home");
+    }
   };
 
   const products = [
     {
       id: 1,
       image: marketplace,
-      alt: 'Market Place',
+      alt: "Market Place",
     },
     {
       id: 2,
       image: securityprovider,
-      alt: 'IAM Security Provider',
-    }
+      alt: "IAM Security Provider",
+    },
   ];
 
   return (
-    <Flex direction="column"  align="center" justify="center" minH="30vh" p={4} mb='4px' bg="gray.50">
-          <Heading  as="h2" size="xl" color={'#0648b3'} mb={1} >Our Products</Heading>
-          <Divider mb={4}/>
+    <Flex
+      direction="column"
+      align="center"
+      justify="center"
+      minH="30vh"
+      p={4}
+      mb="4px"
+      bg="gray.50"
+    >
+      <Heading as="h2" size="xl" color={"#0648b3"} mb={1}>
+        Our Products
+      </Heading>
+      <Divider mb={4} />
       <Center w="100%">
-              <SimpleGrid columns={{ base: 1, md: 2 }} spacing={5} maxW="1200px" w="100%">
+        <SimpleGrid
+          columns={{ base: 1, md: 2 }}
+          spacing={5}
+          maxW="1200px"
+          w="100%"
+        >
           {products.map((product) => (
             <Box
               key={product.id}
@@ -44,8 +68,14 @@ const navigate = useNavigate();
               maxW="400px"
               mx="auto"
             >
-              <Image src={product.image} alt={product.alt} w="100%" h='80%'  objectFit="cover" />
-              <Box textAlign="center" justifyContent={'center'}>
+              <Image
+                src={product.image}
+                alt={product.alt}
+                w="100%"
+                h="80%"
+                objectFit="cover"
+              />
+              <Box textAlign="center" justifyContent={"center"}>
                 <Button
                   borderTopRadius="0px"
                   fontWeight="normal"
@@ -53,8 +83,8 @@ const navigate = useNavigate();
                   color="white"
                   size="md"
                   w="100%"
-                  h='50px'
-                  onClick={()=>handleExploreClick(product)}
+                  h="50px"
+                  onClick={() => handleExploreClick(product)}
                 >
                   Explore - {product.alt}
                 </Button>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   Button,
   Flex,
@@ -25,7 +25,7 @@ import {
   InputRightElement,
 } from "@chakra-ui/react";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
-import { Link as ReactRouterLink, useNavigate } from "react-router-dom";
+import { Link as ReactRouterLink } from "react-router-dom";
 import TermsAndPolicies from "../../assets/pdf/TermsAndPolicies.pdf";
 
 import {
@@ -57,7 +57,7 @@ function SignUp() {
   });
   const [showOtpModal, setShowOtpModal] = useState(false);
   const [userEmail, setUserEmail] = useState("");
-  const [otpData, setOtpData] = useState({
+  const [setOtpData] = useState({
     otp: "",
     expiresAt: null,
   });
@@ -87,7 +87,8 @@ function SignUp() {
   };
 
   const validatePassword = (password) => {
-    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/; // Example: Min 8 characters, at least one uppercase letter, one lowercase letter, one number and one special character
+    const regex =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/; // Example: Min 8 characters, at least one uppercase letter, one lowercase letter, one number and one special character
     return regex.test(password);
   };
 
@@ -134,7 +135,7 @@ function SignUp() {
       });
     }
   };
- 
+
   return (
     <Flex
       direction="column"
@@ -167,7 +168,7 @@ function SignUp() {
           mx={{ base: "100px" }}
           bg={bgColor}
           boxShadow="md"
-          borderWidth='1px'
+          borderWidth="1px"
         >
           <Text
             fontSize="xl"
@@ -451,34 +452,38 @@ function SignUp() {
               </Link>
             </Text>
           </Flex>
-           {/* Email Verification Modal */}
-          <Modal isCentered="true" isOpen={showOtpModal} onClose={() => setShowOtpModal(false)}>
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>Email Verification</ModalHeader>
-          <ModalCloseButton />
-          <ModalBody>
-            <Text>Verification email sent to:</Text>
-            <Text fontWeight="bold">{userEmail}</Text>
-            <FormControl mt={4}>
-              <FormLabel>Enter OTP</FormLabel>
-              <Input id="otp" type="text" />
-            </FormControl>
-          </ModalBody>
-          <ModalFooter>
-            <Button
-              size="sm"
-                mt="4"
-                              colorScheme="green"
-                              fontSize="sm"
+          {/* Email Verification Modal */}
+          <Modal
+            isCentered="true"
+            isOpen={showOtpModal}
+            onClose={() => setShowOtpModal(false)}
+          >
+            <ModalOverlay />
+            <ModalContent>
+              <ModalHeader>Email Verification</ModalHeader>
+              <ModalCloseButton />
+              <ModalBody>
+                <Text>Verification email sent to:</Text>
+                <Text fontWeight="bold">{userEmail}</Text>
+                <FormControl mt={4}>
+                  <FormLabel>Enter OTP</FormLabel>
+                  <Input id="otp" type="text" />
+                </FormControl>
+              </ModalBody>
+              <ModalFooter>
+                <Button
+                  size="sm"
+                  mt="4"
+                  colorScheme="green"
+                  fontSize="sm"
                   boxShadow="sm"
-              // onClick={() => handleVerifyEmail(document.getElementById("otp").value)}
-            >
-              Verify Email
-            </Button>
-          </ModalFooter>
-        </ModalContent>
-      </Modal>
+                  // onClick={() => handleVerifyEmail(document.getElementById("otp").value)}
+                >
+                  Verify Email
+                </Button>
+              </ModalFooter>
+            </ModalContent>
+          </Modal>
         </Flex>
       </Flex>
     </Flex>

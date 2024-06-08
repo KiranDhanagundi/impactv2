@@ -12,6 +12,7 @@ import {
   Link,
   Icon,
   HStack,
+  VisuallyHidden,
 } from "@chakra-ui/react";
 import { FaInstagram, FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
 
@@ -35,21 +36,22 @@ const ContactUs = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-   
+
     console.log(formData);
   };
 
   return (
-    <Flex align="flex-start" justify="center" mt="4px" minHeight="50vh" bg="gray.50" p={2}>
-      <Flex
-        
-              w='100%'
-        direction='column'
-              gap={2}
-              p={2}
-      >
+    <Flex
+      align="flex-start"
+      justify="center"
+      mt="4px"
+      minHeight="50vh"
+      bg="gray.50"
+      p={2}
+    >
+      <Flex w="100%" direction="column" gap={2} p={2}>
         <Box
-          width='100%'
+          width="100%"
           p={2}
           bg="white"
           borderRadius="md"
@@ -61,7 +63,11 @@ const ContactUs = () => {
           </Heading>
           <form onSubmit={handleSubmit}>
             <VStack spacing={3}>
-              <Flex direction={{ base: "column", md: "row" }} width="100%" gap={3}>
+              <Flex
+                direction={{ base: "column", md: "row" }}
+                width="100%"
+                gap={3}
+              >
                 <FormControl id="name" isRequired>
                   <FormLabel fontSize="sm">Name</FormLabel>
                   <Input
@@ -83,7 +89,11 @@ const ContactUs = () => {
                   />
                 </FormControl>
               </Flex>
-              <Flex direction={{ base: "column", md: "row" }} width="100%" gap={3}>
+              <Flex
+                direction={{ base: "column", md: "row" }}
+                width="100%"
+                gap={3}
+              >
                 <FormControl id="phone" isRequired>
                   <FormLabel fontSize="sm">Phone</FormLabel>
                   <Input
@@ -123,14 +133,20 @@ const ContactUs = () => {
                   size="sm"
                 />
               </FormControl>
-              <Button type="submit" size='md'bg="#0648b3" fontWeight='normal'color="white" >
+              <Button
+                type="submit"
+                size="md"
+                bg="#0648b3"
+                fontWeight="normal"
+                color="white"
+              >
                 Submit
               </Button>
             </VStack>
           </form>
         </Box>
         <Box
-          width='100%'
+          width="100%"
           p={3}
           bg="white"
           borderRadius="md"
@@ -145,12 +161,12 @@ const ContactUs = () => {
               as={Link}
               href="https://www.instagram.com"
               isExternal
-              leftIcon={<Icon as={FaInstagram}  />}
+              leftIcon={<Icon as={FaInstagram} />}
               width="full"
               colorScheme="pink"
               size="lg"
             >
-              Instagram
+              <VisuallyHidden>Instagram</VisuallyHidden>
             </Button>
             <Button
               as={Link}
@@ -161,29 +177,29 @@ const ContactUs = () => {
               colorScheme="facebook"
               size="lg"
             >
-              Facebook
+              <VisuallyHidden>Facebook</VisuallyHidden>
             </Button>
             <Button
               as={Link}
               href="https://www.twitter.com"
               isExternal
-              leftIcon={<Icon as={FaTwitter}  />}
+              leftIcon={<Icon as={FaTwitter} />}
               width="full"
               colorScheme="twitter"
               size="lg"
             >
-              Twitter
+              <VisuallyHidden>Twitter</VisuallyHidden>
             </Button>
             <Button
               as={Link}
               href="https://www.linkedin.com"
               isExternal
-              leftIcon={<Icon as={FaLinkedin}  />}
+              leftIcon={<Icon as={FaLinkedin} />}
               width="full"
               colorScheme="linkedin"
               size="lg"
             >
-              LinkedIn
+              <VisuallyHidden>LinkedIn</VisuallyHidden>
             </Button>
           </HStack>
         </Box>

@@ -7,17 +7,14 @@ import {
   VStack,
   HStack,
   Image,
-  useToast,
   Flex,
   Grid,
   Box,
   Spacer,
   Text,
   Textarea,
-  // NumberInput,
   InputGroup,
   InputLeftElement,
-  // Stack,
   Avatar,
   Badge,
   Icon,
@@ -26,9 +23,6 @@ import {
 } from "@chakra-ui/react";
 
 import { DownloadIcon } from "@chakra-ui/icons";
-// import SwipeableViews from "react-swipeable-views";
-// import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-
 
 const AddProduct = () => {
   const [title, setTitle] = useState("");
@@ -39,13 +33,7 @@ const AddProduct = () => {
   const defaultImageSrc = "https://via.placeholder.com/150";
   const author = "Impact Dev";
   const dateTime = "Feb 17,2024";
-  const [isLoading, setIsLoading] = useState(false);
-  // const history = useHistory(); // Initialize useHistory hook
-
-  // const handleCreateProductAndPublish = async (e) => {
-    
-  // };
-
+  const [isLoading] = useState(false);
   return (
     <Flex w="100%" minH="90vH" overflow="auto" direction="column">
       <Box align="start" mb="10px">

@@ -972,11 +972,6 @@ const ProductDetails = () => {
     console.log("Product list or its properties are undefined.");
     // You can assign a default value or handle the situation accordingly
   }
-
-  const handleAddToCart = () => {
-    // dispatch({ type: "ADD_TO_CART", payload: productData });
-  };
-
   const [activeImageIndex, setActiveImageIndex] = useState(0);
 
   const handlePrevImage = () => {

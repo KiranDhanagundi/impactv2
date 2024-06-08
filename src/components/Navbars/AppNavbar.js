@@ -13,23 +13,12 @@ import {
   Avatar,
 } from "@chakra-ui/react";
 import React from "react";
-import { FiBell, FiLogOut, FiSettings, FiUser } from "react-icons/fi";
+import { FiBell, FiLogOut, FiUser } from "react-icons/fi";
 import { css } from "@emotion/react";
 
-import {
-  FaStore,
-  FaList,
-  FaCartPlus,
-  FaRegListAlt,
-  FaTools,
-  FaBlog,
-} from "react-icons/fa";
+import { FaStore, FaList, FaCartPlus } from "react-icons/fa";
 
-import {
-  MdOutlineDashboard,
-  MdOutlineSubscriptions,
-  MdOutlinePayment,
-} from "react-icons/md";
+import { MdOutlineDashboard, MdOutlineSubscriptions } from "react-icons/md";
 import { Link } from "react-router-dom";
 import Logo from "../../pages/Public/components/Logo.js";
 import { HamburgerIcon, SmallCloseIcon } from "@chakra-ui/icons";
