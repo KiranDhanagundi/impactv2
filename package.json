@@ -2,7 +2,6 @@
   "name": "impactv2",
   "version": "0.1.0",
   "private": true,
-  "homepage": "/app/public",
   "dependencies": {
     "@chakra-ui/icons": "^2.1.1",
     "@chakra-ui/react": "^2.8.2",
