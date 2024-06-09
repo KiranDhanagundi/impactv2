@@ -25,15 +25,12 @@ import { Link as ReactRouterLink, useParams } from "react-router-dom";
 import { useEffect } from "react";
 
 const ProductDetails = () => {
-  // const dispatch = useDispatch();
-
   let { productId } = useParams();
   const [productData, setProductData] = useState(null);
 
   useEffect(() => {
     const fetchProductData = async () => {
       try {
-        // const response = await axios.get(`/api/products/${productId}`);
         setProductData("");
       } catch (error) {
         console.error("Error fetching product data:", error);
@@ -968,15 +965,7 @@ const ProductDetails = () => {
       }),
     };
   } else {
-    // Handle the case where productList or its properties are undefined
-    console.log("Product list or its properties are undefined.");
-    // You can assign a default value or handle the situation accordingly
   }
-
-  const handleAddToCart = () => {
-    // dispatch({ type: "ADD_TO_CART", payload: productData });
-  };
-
   const [activeImageIndex, setActiveImageIndex] = useState(0);
 
   const handlePrevImage = () => {

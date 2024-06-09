@@ -10,12 +10,9 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { FaArrowRight } from "react-icons/fa";
-import { Link, useHistory, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const CartOrderSummary = ({ cartItems }) => {
-  const history = useHistory();
-  const location = useLocation();
-
   const calculateTotal = () => {
     return cartItem.reduce((total, item) => total + item.unit_amount, 0);
   };
@@ -34,13 +31,6 @@ const CartOrderSummary = ({ cartItems }) => {
       unit_amount: item.prices[0].unit_amount,
     };
   });
-
-  const handleCheckout = () => {
-    const searchParams = new URLSearchParams(location.search);
-    searchParams.set("cartItems", JSON.stringify(cartItems));
-    history.push(`/app/checkout`);
-  };
-
   return cartItem.length !== 0 ? (
     <Box
       w="100%"

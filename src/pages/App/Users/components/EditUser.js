@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import {
   Modal,
   ModalOverlay,
@@ -15,7 +15,6 @@ import {
 } from "@chakra-ui/react";
 
 const EditUser = ({ isOpen, onClose, user }) => {
-
   const [userData, setUserData] = useState({
     id: user?.id || "",
     name: user?.name || "",
@@ -32,139 +31,144 @@ const EditUser = ({ isOpen, onClose, user }) => {
     access: user?.access || "",
     about: user?.about || "",
   });
-  const rolesList = {
-    "roles": [
+
+  const rolesList = useMemo(
+    () => ({
+      roles: [
         {
-            "roleName": "superadmin",
-            "roleDescription": "Super Admin",
-            "resources": [
-                "app_home",
-                "app_dashboard",
-                "app_cart",
-                "app_myproducts",
-                "app_Settings",
-                "app_profie",
-                "app_subscription",
-                "app_myblogs",
-                "app_access",
-                "app_accessmanagement",
-                "app_payments",
-                "app_orders",
-                "app_edit_product"
-            ]
+          roleName: "superadmin",
+          roleDescription: "Super Admin",
+          resources: [
+            "app_home",
+            "app_dashboard",
+            "app_cart",
+            "app_myproducts",
+            "app_Settings",
+            "app_profie",
+            "app_subscription",
+            "app_myblogs",
+            "app_access",
+            "app_accessmanagement",
+            "app_payments",
+            "app_orders",
+            "app_edit_product",
+          ],
         },
         {
-            "roleName": "admin",
-            "roleDescription": "Admin",
-            "resources": [
-                "app_home",
-                "app_dashboard",
-                "app_cart",
-                "app_myproducts",
-                "app_Settings",
-                "app_profie",
-                "app_subscription",
-                "app_myblogs",
-                "app_orders"
-            ]
+          roleName: "admin",
+          roleDescription: "Admin",
+          resources: [
+            "app_home",
+            "app_dashboard",
+            "app_cart",
+            "app_myproducts",
+            "app_Settings",
+            "app_profie",
+            "app_subscription",
+            "app_myblogs",
+            "app_orders",
+          ],
         },
         {
-            "roleName": "buyer",
-            "roleDescription": "Buyer",
-            "resources": [
-                "app_home",
-                "app_dashboard",
-                "app_cart",
-                "app_Settings",
-                "app_profie",
-                "app_subscription"
-            ]
+          roleName: "buyer",
+          roleDescription: "Buyer",
+          resources: [
+            "app_home",
+            "app_dashboard",
+            "app_cart",
+            "app_Settings",
+            "app_profie",
+            "app_subscription",
+          ],
         },
         {
-            "roleName": "seller",
-            "roleDescription": "Seller",
-            "resources": [
-                "app_home",
-                "app_cart",
-                "app_Settings",
-                "app_profie",
-                "app_subscription",
-                "app_myblogs",
-                "app_dashboard",
-                "app_myproducts"
-            ]
+          roleName: "seller",
+          roleDescription: "Seller",
+          resources: [
+            "app_home",
+            "app_cart",
+            "app_Settings",
+            "app_profie",
+            "app_subscription",
+            "app_myblogs",
+            "app_dashboard",
+            "app_myproducts",
+          ],
         },
         {
-            "roleName": "support",
-            "roleDescription": "Support",
-            "resources": [
-                "app_myproducts",
-                "app_cart",
-                "app_profie",
-                "app_Settings",
-                "app_subscription",
-                "app_myblogs",
-                "app_orders"
-            ]
+          roleName: "support",
+          roleDescription: "Support",
+          resources: [
+            "app_myproducts",
+            "app_cart",
+            "app_profie",
+            "app_Settings",
+            "app_subscription",
+            "app_myblogs",
+            "app_orders",
+          ],
         },
         {
-            "roleName": "customer",
-            "roleDescription": "Customer",
-            "resources": [
-                "app_home",
-                "app_dashboard",
-                "app_myproducts",
-                "app_cart",
-                "app_Settings",
-                "app_profie",
-                "app_subscription"
-            ]
+          roleName: "customer",
+          roleDescription: "Customer",
+          resources: [
+            "app_home",
+            "app_dashboard",
+            "app_myproducts",
+            "app_cart",
+            "app_Settings",
+            "app_profie",
+            "app_subscription",
+          ],
         },
         {
-            "roleName": "Tes",
-            "roleDescription": "Test",
-            "resourcePermissions": {
-                "app_dashboard": {
-                    "view": true,
-                    "create": true,
-                    "edit": true,
-                    "delete": true
-                },
-                "app_cart": {
-                    "delete": false,
-                    "view": true,
-                    "create": true,
-                    "edit": false
-                },
-                "test_res": {
-                    "view": false,
-                    "create": false,
-                    "edit": false
-                },
-                "app_myproducts": {
-                    "edit": true,
-                    "delete": true
-                }
-            }
+          roleName: "Tes",
+          roleDescription: "Test",
+          resourcePermissions: {
+            app_dashboard: {
+              view: true,
+              create: true,
+              edit: true,
+              delete: true,
+            },
+            app_cart: {
+              delete: false,
+              view: true,
+              create: true,
+              edit: false,
+            },
+            test_res: {
+              view: false,
+              create: false,
+              edit: false,
+            },
+            app_myproducts: {
+              edit: true,
+              delete: true,
+            },
+          },
         },
         {
-            "roleName": "Test role",
-            "roleDescription": "role",
-            "resourcePermissions": {
-                "app_dashboard": {
-                    "view": true,
-                    "create": true,
-                    "edit": true,
-                    "delete": true
-                },
-                "app_cart": {
-                    "view": true,
-                    "create": true
-                }
-            }
-        }
-    ]
-}
+          roleName: "Test role",
+          roleDescription: "role",
+          resourcePermissions: {
+            app_dashboard: {
+              view: true,
+              create: true,
+              edit: true,
+              delete: true,
+            },
+            app_cart: {
+              view: true,
+              create: true,
+            },
+          },
+        },
+      ],
+    }),
+    []
+  );
+
   const [roleList, setRoleList] = useState([]);
 
   useEffect(() => {
@@ -189,8 +193,8 @@ const EditUser = ({ isOpen, onClose, user }) => {
   }, [user]);
 
   useEffect(() => {
-    if (Array.isArray(rolesList)) {
-      setRoleList(rolesList);
+    if (Array.isArray(rolesList.roles)) {
+      setRoleList(rolesList.roles);
     }
   }, [rolesList]);
 
@@ -248,7 +252,7 @@ const EditUser = ({ isOpen, onClose, user }) => {
             <FormLabel>Email</FormLabel>
             <Input
               name="email"
-              disabled="true"
+              disabled
               placeholder="Email"
               value={userData.email}
               onChange={handleInputChange}
@@ -274,7 +278,7 @@ const EditUser = ({ isOpen, onClose, user }) => {
           <FormControl mt={2}>
             <FormLabel>Domain</FormLabel>
             <Input
-              disabled="true"
+              disabled
               name="domain"
               placeholder="Domain"
               value={userData.domain}
@@ -284,7 +288,7 @@ const EditUser = ({ isOpen, onClose, user }) => {
           <FormControl mt={2}>
             <FormLabel>Subscription Type</FormLabel>
             <Input
-              disabled="true"
+              disabled
               name="subscriptionType"
               placeholder="Subscription Type"
               value={userData.subscriptionType}
