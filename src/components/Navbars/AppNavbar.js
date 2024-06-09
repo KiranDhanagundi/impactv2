@@ -6,35 +6,21 @@ import {
   IconButton,
   Menu,
   MenuButton,
-  // MenuItem,
   MenuList,
   Spacer,
   Text,
   Avatar,
 } from "@chakra-ui/react";
 import React from "react";
-import { FiBell, FiLogOut, FiSettings, FiUser } from "react-icons/fi";
+import { FiBell, FiLogOut, FiUser } from "react-icons/fi";
 import { css } from "@emotion/react";
 
-import {
-  FaStore,
-  FaList,
-  FaCartPlus,
-  FaRegListAlt,
-  FaTools,
-  FaBlog,
-} from "react-icons/fa";
+import { FaStore, FaList, FaCartPlus } from "react-icons/fa";
 
-import {
-  MdOutlineDashboard,
-  MdOutlineSubscriptions,
-  MdOutlinePayment,
-} from "react-icons/md";
+import { MdOutlineDashboard, MdOutlineSubscriptions } from "react-icons/md";
 import { Link } from "react-router-dom";
 import Logo from "../../pages/Public/components/Logo.js";
 import { HamburgerIcon, SmallCloseIcon } from "@chakra-ui/icons";
-// import routes from "../../routes.js";
-// import AppSidebar from "./AppSidebar.js";
 
 const AppNavbar = () => {
   const [show, setShow] = React.useState(false);
@@ -65,7 +51,6 @@ const AppNavbar = () => {
   };
 
   const handleLogout = () => {
-    // dispatch(actions.clearUserDetails());
     window.location.href = "/home";
   };
 
@@ -211,17 +196,6 @@ const AppNavbar = () => {
                   Users
                 </Link>
               </MenuItem>
-
-              {/* <MenuItem _hover={{ bg: "gray.100" }}>
-                  <Link to="/app/access">
-                    <IconButton
-                      bg="none"
-                      aria-label="Access"
-                      icon={<FaTools />}
-                    />
-                    Access Management
-                  </Link>
-                </MenuItem> */}
               <Divider />
               <MenuItem _hover={{ bg: "gray.100" }}>
                 <Link to="/home" onClick={handleLogout}>

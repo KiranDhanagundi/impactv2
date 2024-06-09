@@ -7,17 +7,14 @@ import {
   VStack,
   HStack,
   Image,
-  useToast,
   Flex,
   Grid,
   Box,
   Spacer,
   Text,
   Textarea,
-  // NumberInput,
   InputGroup,
   InputLeftElement,
-  // Stack,
   Avatar,
   Badge,
   Icon,
@@ -26,9 +23,6 @@ import {
 } from "@chakra-ui/react";
 
 import { DownloadIcon } from "@chakra-ui/icons";
-// import SwipeableViews from "react-swipeable-views";
-// import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-
 
 const AddProduct = () => {
   const [title, setTitle] = useState("");
@@ -39,12 +33,7 @@ const AddProduct = () => {
   const defaultImageSrc = "https://via.placeholder.com/150";
   const author = "Impact Dev";
   const dateTime = "Feb 17,2024";
-  const [isLoading, setIsLoading] = useState(false);
-  // const history = useHistory(); // Initialize useHistory hook
-
-  // const handleCreateProductAndPublish = async (e) => {
-    
-  // };
+  const [isLoading] = useState(false);
 
   return (
     <Flex w="100%" minH="90vH" overflow="auto" direction="column">
@@ -69,12 +58,7 @@ const AddProduct = () => {
           <Text fontWeight={"bold"} color={"#0648b3"}>
             New Product
           </Text>
-          <VStack
-            as="form"
-            // onSubmit={handleCreateProductAndPublish}
-            w="100%"
-            spacing="2"
-          >
+          <VStack as="form" w="100%" spacing="2">
             <FormControl isRequired id="title">
               <FormLabel>Product Title</FormLabel>
               <Input
@@ -84,14 +68,6 @@ const AddProduct = () => {
                 onChange={(e) => setTitle(e.target.value)}
               />
             </FormControl>
-            {/* <FormControl isRequired id="imageUrl">
-              <FormLabel> Media</FormLabel>
-              <Input
-                type="file"
-                value={imageUrl}
-                onChange={(e) => setImageUrl(e.target.value)}
-              />
-            </FormControl> */}
             <FormControl isRequired id="imageUrl">
               <FormLabel> Media</FormLabel>
               <Input
@@ -119,16 +95,6 @@ const AddProduct = () => {
                 onChange={(e) => setCategory(e.target.value)}
               />
             </FormControl>
-            {/* <FormControl isRequired>
-              <FormLabel>Category</FormLabel>
-              <Select placeholder="Select...">
-                <option>Technology</option>
-                <option>Art</option>
-                <option>Others</option>
-                value={category}
-                onChange={(e) => setCategory(e.target.value)}
-              </Select>
-            </FormControl> */}
             <FormControl isRequired id="price">
               <FormLabel>Price</FormLabel>
               <InputGroup>
@@ -156,7 +122,6 @@ const AddProduct = () => {
                 h="36px"
                 fontSize="sm"
                 type="submit"
-                // onClick={handleCreateProductAndPublish}
                 isLoading={isLoading}
               >
                 Create Product & Publish
@@ -209,16 +174,7 @@ const AddProduct = () => {
                 p="2px"
               >
                 <Flex align={"center"}>
-                  <Avatar
-                    size="2xs"
-                    mr="2"
-                    // src={
-                    //   product.avatar
-                    //     ? product.avatar
-                    //     : "https://bit.ly/broken-link"
-                    // }
-                    src="https://bit.ly/broken-link"
-                  />
+                  <Avatar size="2xs" mr="2" src="https://bit.ly/broken-link" />
                   <Text fontSize="xs" color="gray.500">
                     {author || "Author Name"}
                   </Text>
